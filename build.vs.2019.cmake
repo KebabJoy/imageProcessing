@@ -1,0 +1,5 @@
+set(OpenCV_DIR "/usr/local/include/opencv4")
+file(MAKE_DIRECTORY build.vs.2019)
+exec_program(cmake build.vs.2019 ARGS .. -G Xcode)
+exec_program(cmake build.vs.2019 ARGS --build . --config Debug)
+exec_program(cmake build.vs.2019 ARGS --build . --config Release)
