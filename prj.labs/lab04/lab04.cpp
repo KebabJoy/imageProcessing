@@ -109,7 +109,7 @@ public:
             //estimating the quality of the mask, we've got
             cv::Mat standard_mask = cv::imread("../data/masks_lab04/" + filename + "/" + std::to_string(i + 1) + ".png").clone();
             cv::cvtColor(standard_mask, standard_mask, cv::COLOR_BGR2GRAY);
-            std::cout << "Quality of " + filename + " " << i + 1 << ": " << estimate_quality(frameCC, standard_mask) << std::endl;
+            std::cout << estimate_quality(frameCC, standard_mask) << "," << std::endl;
 
             //creating an image with mask overlaying original
             cv::Mat mask_over_original(frameCC.size(), CV_8UC3);
@@ -196,3 +196,4 @@ int main() {
     v4.call();
     v5.call();
 }
+
